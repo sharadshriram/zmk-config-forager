@@ -1,220 +1,184 @@
 layout: {zmk_keyboard: forager}
 layers:
-  BASE:
-  - Q
-  - W
-  - E
-  - R
-  - T
-  - Y
-  - U
-  - I
-  - O
-  - P
-  - {t: A, h: LGUI}
-  - {t: S, h: LALT}
-  - {t: D, h: LCTRL}
-  - {t: F, h: LSHFT}
-  - G
-  - H
-  - {t: J, h: RSHFT}
-  - {t: K, h: RCTRL}
-  - {t: L, h: RALT}
-  - {t: ;, h: RGUI}
-  - Z
-  - X
-  - C
-  - V
-  - B
-  - N
-  - M
-  - {t: ',', s: ;}
-  - {t: ., s: ':'}
+  default:
+  - {t: Q, h: Sft+Q}
+  - {t: W, h: Sft+W}
+  - {t: E, h: Sft+E}
+  - {t: R, h: Sft+R}
+  - {t: T, h: Sft+T}
+  - {t: Y, h: Sft+Y}
+  - {t: U, h: Sft+U}
+  - {t: I, h: Sft+I}
+  - {t: O, h: Sft+O}
+  - {t: P, h: Sft+P}
+  - {t: A, h: Sft+A}
+  - {t: S, h: Sft+S}
+  - {t: D, h: Sft+D}
+  - {t: F, h: Sft+F}
+  - {t: G, h: Sft+G}
+  - {t: H, h: Sft+H}
+  - {t: J, h: Sft+J}
+  - {t: K, h: Sft+K}
+  - {t: L, h: Sft+L}
+  - {t: ;, h: ':'}
+  - {t: Z, h: Sft+Z}
+  - {t: X, h: Sft+X}
+  - {t: C, h: Sft+C}
+  - {t: V, h: Sft+V}
+  - {t: B, h: Sft+B}
+  - {t: N, h: Sft+N}
+  - {t: M, h: Sft+M}
+  - {t: ',', h: .}
   - /
-  - {t: SPACE, h: NAV}
-  - TAB
-  - {t: RET, h: SYM}
-  - {t: BSPC, h: NUM}
-  NAV:
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - Gui+Sft+Z
-  - Gui+V
-  - Gui+C
-  - Gui+X
-  - Gui+Z
-  - LGUI
-  - LALT
   - LCTRL
-  - LSHFT
-  - ''
+  - {t: TAB, h: nav}
+  - {t: ESC, h: LSHFT}
+  - {t: SPACE, h: sym}
+  - {t: BSPC, h: num}
+  nav:
+  - PG UP
+  - HOME
+  - UP
+  - END
+  - CAPS
+  - DEL
+  - Ctl+BSPC
+  - UP
+  - PG UP
+  - PSCRN
+  - PG DN
   - LEFT
   - DOWN
-  - UP
   - RIGHT
-  - CAPS
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - TAB
+  - BSPC
+  - H
+  - J
+  - K
+  - L
+  - Ctl+Z
+  - Ctl+X
+  - Ctl+C
+  - Ctl+V
+  - Ctl+Y
   - INS
   - HOME
-  - PG DN
-  - PG UP
+  - DOWN
   - END
+  - RET
   - {type: held}
-  - ''
   - {t: ▽, type: trans}
-  - BSPC
-  NUM:
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  sym:
+  - '`'
+  - $
+  - '~'
+  - /
+  - '@'
+  - +
+  - (
+  - )
   - '['
+  - ']'
+  - ''''
+  - '"'
+  - '='
+  - '-'
+  - _
+  - '*'
+  - '{'
+  - '}'
+  - ':'
+  - '#'
+  - '!'
+  - '%'
+  - '&'
+  - '|'
+  - \
+  - ^
+  - <
+  - '>'
+  - '?'
+  - ;
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {type: held}
+  - {t: ▽, type: trans}
+  num:
+  - F1
+  - F2
+  - F3
+  - F4
+  - F5
   - '7'
   - '8'
   - '9'
-  - ']'
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ;
+  - +
+  - '*'
+  - F6
+  - F7
+  - F8
+  - F9
+  - F10
   - '4'
   - '5'
   - '6'
+  - '-'
+  - /
+  - F11
+  - F12
+  - .
+  - '0'
   - '='
-  - ''
-  - RSHFT
-  - RCTRL
-  - RALT
-  - RGUI
-  - '`'
   - '1'
   - '2'
   - '3'
-  - \
-  - ''
-  - ''
-  - ','
-  - .
-  - ''
-  - SPACE
   - '0'
-  - RET
-  - {t: BSPC, type: held}
-  SYM:
-  - '{'
-  - '&'
-  - '*'
-  - (
-  - '}'
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
-  - ':'
-  - $
-  - '%'
-  - ^
-  - +
-  - ''
-  - RSHFT
-  - RCTRL
-  - RALT
-  - RGUI
-  - '~'
-  - '!'
-  - '@'
-  - '#'
-  - '|'
-  - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - .
   - {t: ▽, type: trans}
-  - )
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - ''
-  ADJ:
-  - '&studio_unlock'
-  - ''
-  - ''
-  - ''
-  - ''
-  - MUTE
-  - VOL DN
-  - VOL UP
-  - PP
-  - ''
-  - LGUI
-  - LALT
-  - LCTRL
-  - LSHFT
-  - ''
-  - OUT TOG
+  tri:
+  - BT CLR
   - {t: BT, h: '0'}
   - {t: BT, h: '1'}
   - {t: BT, h: '2'}
   - {t: BT, h: '3'}
-  - '&bootloader'
+  - VOL UP
+  - BRI UP
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - '&sys_reset'
-  - ''
-  - ''
-  - ''
-  - BT CLR
-  - ''
-  - ''
-  - ''
-  - ''
+  - OUT TOG
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - VOL DN
+  - BRI DN
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - '&bootloader'
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - MUTE
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
-  - ''
+  - {t: ▽, type: trans}
   - {type: held}
-  - ''
+  - {t: ▽, type: trans}
 combos:
-- p: [0, 1]
-  k: ESC
-  l: [BASE]
-- p: [13, 16]
-  k: '&caps_word'
-  l: [BASE]
-- p: [7, 8]
-  k: BSPC
-  l: [BASE]
-- p: [8, 9]
-  k: DEL
-  l: [BASE]
-- p: [11, 12]
-  k: TAB
-  l: [BASE]
-- p: [17, 18]
-  k: RET
-  l: [BASE]
+- p: [1, 2]
+  k: '#'
 - p: [16, 17]
-  k: '&num_word 2'
-  l: [BASE]
-- p: [21, 22]
-  k: Gui+C
-  l: [BASE]
-- p: [22, 23]
-  k: Gui+V
-  l: [BASE]
-- p: [21, 23]
-  k: Gui+X
-  l: [BASE]
-- p: [16, 26]
-  k: '-'
-  l: [BASE]
-- p: [15, 25]
-  k: _
-  l: [BASE]
-- p: [13, 23]
-  k: '='
-  l: [BASE]
-- p: [11, 21]
-  k: '`'
-  l: [BASE]
+  k: RET
+- p: [12, 13]
+  k: Ctl+BSPC
