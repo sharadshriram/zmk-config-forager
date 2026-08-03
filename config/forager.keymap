@@ -15,7 +15,7 @@
 #define NUM  3  /* Numpad and Function keys (F1-F12) */
 #define TRI  4  /* System settings (Bluetooth, Brightness, Volume) */
 
-{
+/ {
     /* ------------------------------------------------------------------
      * COMBOS: Pressing two keys simultaneously triggers a third key/action
      * ------------------------------------------------------------------ */
@@ -23,21 +23,21 @@
         compatible = "zmk,combos";
 
         /* W + E = '#' (Quick Markdown Headings) */
-        combo_hash {
+        combo-hash {
             timeout-ms = <50>;
             key-positions = <1 2>;
             bindings = <&kp HASH>;
         };
 
-        /* J + K = ENTER (Saves reaching for a dedicated Enter key) */
-        combo_enter {
+        /* J + K = ENTER */
+        combo-enter {
             timeout-ms = <50>;
             key-positions = <16 17>;
             bindings = <&kp RET>;
         };
 
         /* D + F = Word Delete (Ctrl + Backspace) */
-        combo_word_del {
+        combo-word-del {
             timeout-ms = <50>;
             key-positions = <12 13>;
             bindings = <&kp LC(BSPC)>;
@@ -49,7 +49,7 @@
      * ------------------------------------------------------------------ */
     behaviors {
         /* Tap = Semicolon (;), Hold = Colon (:) */
-        semi_colon: semi_colon_tap_hold {
+        semi_colon: semi-colon-tap-hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <170>;
@@ -59,7 +59,7 @@
         };
 
         /* Tap = Comma (,), Hold = Period (.) */
-        dot_comma: dot_comma_tap_hold {
+        dot_comma: dot-comma-tap-hold {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <170>;
@@ -69,7 +69,7 @@
         };
 
         /* Tap = Lowercase Letter, Hold = Capital Letter */
-        hp: hold_capital {
+        hp: hold-capital {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <170>;
@@ -79,7 +79,7 @@
         };
 
         /* Left Thumb Outer: Tap = Escape, Hold = Shift */
-        shft_esc: shift_escape {
+        shft_esc: shift-escape {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <175>;
@@ -95,7 +95,7 @@
      * ------------------------------------------------------------------ */
     conditional_layers {
         compatible = "zmk,conditional-layers";
-        tri_layer {
+        tri-layer {
             if-layers = <NAV SYM>;
             then-layer = <TRI>;
         };
@@ -106,10 +106,6 @@
 
         /* 
          * LAYER 0: DEFAULT BASE LAYER
-         * Notes:
-         * - All letter keys use &hp to output Capital when held.
-         * - Merged Comma/Dot and Semicolon/Colon save key spaces.
-         * - Outer bottom-right key is assigned to LCTRL for terminal access.
          */
         default_layer {
             bindings = <
@@ -122,8 +118,6 @@
 
         /* 
          * LAYER 1: VIM & NAVIGATION
-         * Activated by holding: Left Thumb Inner (NAV)
-         * Notes: Native H J K L movement, text editing, page scrolling.
          */
         nav_layer {
             bindings = <
@@ -136,8 +130,6 @@
 
         /* 
          * LAYER 2: SYMBOLS & PROGRAMMING SYNTAX
-         * Activated by holding: Right Thumb Inner (SYM)
-         * Notes: Optimized bracket placement, operators for Python & Bash.
          */
         sym_layer {
             bindings = <
@@ -150,8 +142,6 @@
 
         /* 
          * LAYER 3: NUMBERS & NUMPAD
-         * Activated by holding: Right Thumb Outer (NUM)
-         * Notes: Numpad layout on right hand, Function keys F1-F12 on left hand.
          */
         num_layer {
             bindings = <
@@ -164,8 +154,6 @@
 
         /* 
          * LAYER 4: SYSTEM CONTROLS & HARDWARE
-         * Activated by holding: Both NAV (Layer 1) + SYM (Layer 2) simultaneously
-         * Notes: Bluetooth profile switching, volume, screen brightness, bootloader reset.
          */
         tri_layer {
             bindings = <
